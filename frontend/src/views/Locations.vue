@@ -1,5 +1,7 @@
 <template>
   <div>
-    Locations and Hours
+    <h1>
+      Locations and Hours
+    </h1>
   </div>
 </template>
