@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Locations from '../views/Locations.vue'
+import Emlpoyeepage from '../views/Employeepage.vue'
+import signup from '../views/signup.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +14,19 @@ const routes = [
     component: Home
   },
   {
+    path: '/signup',
+    name: 'signup',
+    component: signup
+  },
+  {
     path: '/location',
     name: 'location',
     component: Locations
+  },
+  {
+    path: '/employee/:first/:last',
+    name: 'employee',
+    component: Emlpoyeepage
   }
 ]
 
