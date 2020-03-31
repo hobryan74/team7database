@@ -3,8 +3,7 @@
     <h1>Team 7 Medical Clinic Database</h1>
     <div id="nav">
       <router-link to="/">Login</router-link> |
-      <router-link to="/signup">Sign Up</router-link> |
-      <router-link to="/location">Locations</router-link>
+      <router-link to="/signup">Sign Up</router-link>
     </div>
     <router-view/>
   </div>
