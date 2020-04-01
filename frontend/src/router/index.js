@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/login',
     name: 'home',
     component: Home
   },
@@ -19,14 +19,15 @@ const routes = [
     component: signup
   },
   {
-    path: '/location',
+    path: '/location/:username',
     name: 'location',
     component: Locations
   },
   {
-    path: '/employee/:first/:last',
+    path: '/employee/:username',
     name: 'employee',
-    component: Employeepage
+    component: Employeepage,
+    props: true
   }
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>
-          {{ id }}'s login test page
+          {{ this.$route.params.username }}'s login test page
       </h1>
       <b-card
     title="Location and Hours"
@@ -22,16 +22,12 @@
 export default {
   methods: {
     locationclick () {
-      this.$router.replace({ path: '/location' })
+      this.$router.replace({ path: `/location/${this.$route.params.username}` })
     }
   },
   data () {
     return {
-      id: ''
     }
-  },
-  created () {
-    this.id = this.$route.params.username
   }
 }
 </script>
