@@ -27,8 +27,12 @@
 export default {
   methods: {
     homeclick () {
-      //  fix this
       this.$router.replace({ path: `/employee/${this.$route.params.username}` })
+    }
+  },
+  data () {
+    return {
+
     }
   }
 }

@@ -49,7 +49,6 @@ export default {
       //  alert(JSON.stringify(this.signup))
       //  https://router.vuejs.org/guide/essentials/navigation.html
       //  Logic to choose if account exists and if employee or patient
-      //  fix passing info to new page
       this.$router.replace({ path: `/employee/${this.login.username}` })
     },
     onReset (evt) {

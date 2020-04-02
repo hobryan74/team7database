@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="employee === this.$route.params.username">
       <h1>
           {{ this.$route.params.username }}'s login test page
       </h1>
@@ -16,6 +16,9 @@
     <b-button @click="locationclick" href="#" variant="primary">Select</b-button>
   </b-card>
   </div>
+  <div v-else-if="patient === this.$route.params.username">
+    Hi
+  </div>
 </template>
 
 <script>
@@ -27,6 +30,8 @@ export default {
   },
   data () {
     return {
+      employee: 'employee',
+      patient: 'patient'
     }
   }
 }
