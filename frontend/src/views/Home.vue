@@ -1,6 +1,8 @@
 <template>
   <div id="root">
     <b-container>
+      <b-row align-h="center">
+        <b-col cols="5">
           <h1>
           Log In
           </h1>
@@ -26,7 +28,9 @@
             <b-button type="submit" variant="primary">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
           </b-form>
-  </b-container>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -49,7 +53,7 @@ export default {
       //  alert(JSON.stringify(this.signup))
       //  https://router.vuejs.org/guide/essentials/navigation.html
       //  Logic to choose if account exists and if employee or patient
-      this.$router.replace({ path: `/employee/${this.login.username}` })
+      this.$router.replace({ path: `/home/${this.login.username}` })
     },
     onReset (evt) {
       evt.preventDefault()

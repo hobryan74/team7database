@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Team 7 Medical Clinic Database</h1>
     <div id="nav">
-      <router-link to="/login">Login</router-link> |
+      <router-link to="/">Login</router-link> |
       <router-link to="/signup">Sign Up</router-link>
     </div>
     <router-view/>

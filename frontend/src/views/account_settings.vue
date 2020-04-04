@@ -1,22 +1,33 @@
 <template>
   <div id="root">
-      <b-container>
-        <h1>
-        Sign Up
-        </h1>
-        <b-row align-h="center">
-          <b-col cols="5">
-            <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-              <b-form-group id="input-group-3" label="Username:" label-for="input-3">
-                <b-form-input
-                  id="input-3"
-                  v-model="signup.username"
-                  required
-                  placeholder="Enter username"
-                ></b-form-input>
-              </b-form-group>
-              <b-form-group
-                id="input-group-4"
+    <b-container>
+      <b-row>
+        <b-col>
+          <b-button @click="homeclick" href="#" variant="primary">Home</b-button>
+        </b-col>
+        <b-col>
+          <h1>
+            Account Settings
+         </h1>
+        </b-col>
+        <b-col>
+        </b-col>
+      </b-row>
+    </b-container>
+    <b-container>
+      <b-row align-h="center">
+        <b-col cols="5">
+          <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+            <b-form-group id="input-group-3" label="Username:" label-for="input-3">
+              <b-form-input
+                id="input-3"
+                v-model="signup.username"
+                required
+                :placeholder="signup.username"
+              ></b-form-input>
+            </b-form-group>
+            <b-form-group
+              id="input-group-4"
               label="Email address:"
               label-for="input-1"
               description=""
@@ -26,7 +37,7 @@
                 v-model="signup.email"
                 type="email"
                 required
-                placeholder="Enter email"
+                :placeholder="signup.email"
               ></b-form-input>
             </b-form-group>
 
@@ -35,7 +46,7 @@
                 id="input-5"
                 v-model="signup.firstname"
                 required
-                placeholder="Enter first name"
+                :placeholder="signup.firstname"
               ></b-form-input>
             </b-form-group>
 
@@ -44,7 +55,7 @@
                 id="input-6"
                 v-model="signup.lastname"
                 required
-                placeholder="Enter last name"
+                :placeholder="signup.lastname"
               ></b-form-input>
             </b-form-group>
 
@@ -57,7 +68,7 @@
                 id="input-8"
                 v-model="signup.phone"
                 required
-                placeholder="Enter phone number"
+                :placeholder="signup.phone"
               ></b-form-input>
             </b-form-group>
 
@@ -75,7 +86,7 @@
                 id="input-10"
                 v-model="signup.address"
                 required
-                placeholder="Enter address"
+                :placeholder="signup.address"
               ></b-form-input>
             </b-form-group>
 
@@ -89,32 +100,31 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
   data () {
     return {
       signup: {
-        username: '',
-        firstname: '',
-        lastname: '',
-        email: '',
-        dob: '',
-        phone: '',
-        sex: '',
-        address: ''
+        //  need to access data from database
+        username: 'Test',
+        firstname: 'Bryan',
+        lastname: 'Ho',
+        email: 'h@g.com',
+        dob: '1998-01-07',
+        phone: 'f',
+        sex: 'Male',
+        address: 'f'
 
       },
       type: [{ text: 'Select One', value: null }, 'Male', 'Female', 'Other'],
-      show: true
+      show: true,
+      test: 'test'
     }
   },
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
       //  alert(JSON.stringify(this.signup))
-      //  Logic to make account
-      this.$router.replace({ path: `/home/${this.signup.username}` })
+      //  update database
     },
     onReset (evt) {
       evt.preventDefault()
@@ -133,6 +143,9 @@ export default {
       this.$nextTick(() => {
         this.show = true
       })
+    },
+    homeclick () {
+      this.$router.replace({ path: `/home/${this.$route.params.username}` })
     }
   }
 }

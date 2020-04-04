@@ -7,10 +7,11 @@
         </b-col>
         <b-col>
           <h1>
-            Locations and Hours
+            Location and Hours
          </h1>
         </b-col>
-        <b-col></b-col>
+        <b-col>
+        </b-col>
       </b-row>
     </b-container>
 
@@ -27,7 +28,7 @@
 export default {
   methods: {
     homeclick () {
-      this.$router.replace({ path: `/employee/${this.$route.params.username}` })
+      this.$router.replace({ path: `/home/${this.$route.params.username}` })
     }
   },
   data () {

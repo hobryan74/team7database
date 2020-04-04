@@ -2,14 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Locations from '../views/Locations.vue'
-import Employeepage from '../views/Employeepage.vue'
+import loginhome from '../views/login_home.vue'
 import signup from '../views/signup.vue'
+import settings from '../views/account_settings.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'home',
     component: Home
   },
@@ -24,10 +25,14 @@ const routes = [
     component: Locations
   },
   {
-    path: '/employee/:username',
-    name: 'employee',
-    component: Employeepage,
-    props: true
+    path: '/home/:username',
+    name: 'loginhome',
+    component: loginhome
+  },
+  {
+    path: '/settings/:username',
+    name: 'settings',
+    component: settings
   }
 ]
 
