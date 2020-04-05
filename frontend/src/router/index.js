@@ -5,6 +5,7 @@ import Locations from '../views/Locations.vue'
 import loginhome from '../views/login_home.vue'
 import signup from '../views/signup.vue'
 import settings from '../views/account_settings.vue'
+import scheduleappointment from '../views/scheduleappointment.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/settings/:username',
     name: 'settings',
     component: settings
+  },
+  {
+    path: '/scheduleappointment/:username',
+    name: 'scheduleappointment',
+    component: scheduleappointment
   }
 ]
 
