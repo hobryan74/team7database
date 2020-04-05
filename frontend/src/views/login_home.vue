@@ -44,7 +44,7 @@
         class="mb-2"
       >
 
-      <b-button @click="appointment" href="#" variant="primary">Select</b-button>
+        <b-button @click="appointment" href="#" variant="primary">Select</b-button>
       </b-card>
     </div>
   </div>
@@ -60,7 +60,7 @@ export default {
       this.$router.replace({ path: `/settings/${this.$route.params.username}` })
     },
     appointment () {
-      this.$router.replace({ path: `/scheduleappointment/${this.$route.params.username}` })
+      this.$router.replace({ path: `/appointmentdate/${this.$route.params.username}` })
     }
   },
   data () {
