@@ -7,7 +7,8 @@ import signup from '../views/signup.vue'
 import settings from '../views/account_settings.vue'
 import appointmentdate from '../views/appointmentdate.vue'
 import appointmentlocation from '../views/appointmentlocation.vue'
-import appointmentdoctor from '../views/appointmentdoctor.vue'
+import appointmentselectdoctor from '../views/appointmentselectdoctor.vue'
+import appointmentcomplete from '../views/appointmentcomplete.vue'
 
 Vue.use(VueRouter)
 
@@ -50,7 +51,12 @@ const routes = [
   {
     path: '/appointmentselectdoctor/:username',
     name: 'appointmentselectdoctor',
-    component: appointmentdoctor
+    component: appointmentselectdoctor
+  },
+  {
+    path: '/appointmentcomplete/:username',
+    name: 'appointmentcomplete',
+    component: appointmentcomplete
   }
 ]
 

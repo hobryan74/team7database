@@ -17,13 +17,10 @@
     <b-container>
       <b-row align-h="center">
         <b-col cols="5">
-          <b-list-group>
-            <b-list-group-item>Location 1</b-list-group-item>
-            <b-list-group-item>Location 2</b-list-group-item>
-            <b-list-group-item>Location 3</b-list-group-item>
-            <b-list-group-item>Location 4</b-list-group-item>
-            <b-list-group-item>Location 5</b-list-group-item>
-          </b-list-group>
+           <div>
+            <b-form-select v-model="selected" :options="options"></b-form-select>
+            <b-button @click="select" :disabled="selected === null" href="#" variant="primary">Select</b-button>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -42,6 +39,14 @@ export default {
   },
   data () {
     return {
+      selected: null,
+      options: [
+        { value: null, text: 'Please select an option' },
+        'Location 1',
+        'Location 2',
+        'Location 3',
+        'Location 4'
+      ]
     }
   }
 }

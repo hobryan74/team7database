@@ -49,7 +49,7 @@
             </b-form-group>
 
             <b-form-group id="input-group-7" label="Date of Birth:" label-for="input-7">
-              <b-form-datepicker id="input-group-7" v-model="signup.dob" class="mb-2"></b-form-datepicker>
+              <b-form-datepicker id="input-group-7" v-model="signup.dob" required></b-form-datepicker>
             </b-form-group>
 
             <b-form-group id="input-group-8" label="Telephone Number:" label-for="input-8">
@@ -79,7 +79,7 @@
               ></b-form-input>
             </b-form-group>
 
-            <b-button type="submit" variant="primary">Submit</b-button>
+            <b-button type="submit" :disabled="signup.dob === ''" variant="primary">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
           </b-form>
         </b-col>

@@ -3,11 +3,11 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
-          <b-button @click="backclick" href="#" variant="primary">Back</b-button>
+          <b-button @click="homeclick" href="#" variant="primary">Home</b-button>
         </b-col>
         <b-col>
           <h1>
-            Choose a Doctor
+            Complete, your appointment has been scheduled with ... on ...
          </h1>
         </b-col>
         <b-col>
@@ -20,11 +20,8 @@
 <script>
 export default {
   methods: {
-    backclick () {
-      this.$router.replace({ path: `/appointmentlocation/${this.$route.params.username}` })
-    },
-    select () {
-      this.$router.replace({ path: `/appointmentselectdoctor/${this.$route.params.username}` })
+    homeclick () {
+      this.$router.replace({ path: `/home/${this.$route.params.username}` })
     }
   },
   data () {
