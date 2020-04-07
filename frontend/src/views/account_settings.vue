@@ -58,7 +58,16 @@
                 :placeholder="signup.lastname"
               ></b-form-input>
             </b-form-group>
-
+            <!--want to remove this-->
+            <b-form-group id="input-group-11" label="Password:" label-for="input-11">
+              <b-form-input
+                id="input-1"
+                v-model="signup.password"
+                required
+                placeholder="Enter password"
+              ></b-form-input>
+            </b-form-group>
+            <!--want to remove this-->
             <b-form-group id="input-group-7" label="Date of Birth:" label-for="input-7">
               <b-form-datepicker id="input-group-7" v-model="signup.dob" class="mb-2"></b-form-datepicker>
             </b-form-group>
@@ -112,8 +121,9 @@ export default {
         dob: '1998-01-07',
         phone: 'f',
         sex: 'Male',
-        address: 'f'
-
+        address: 'f',
+        //  i dont like this and i think we shouldnt add the option
+        password: 'test'
       },
       type: [{ text: 'Select One', value: null }, 'Male', 'Female', 'Other'],
       show: true,
@@ -137,6 +147,7 @@ export default {
       this.signup.phone = ''
       this.signup.sex = ''
       this.signup.address = ''
+      this.signup.password = ''
       this.type = []
       // Trick to reset/clear native browser form validation state
       this.show = false
