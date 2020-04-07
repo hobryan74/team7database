@@ -5,6 +5,18 @@
         <h1>
             {{ this.$route.params.username }}'s login test page
         </h1>
+        <b-card
+        title="Schedule"
+        img-src="https://www.highlandernews.org/wp-content/uploads/2016/02/ops.meme_.nba_.jpg"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-2"
+      >
+
+        <b-button @click="schedule" href="#" variant="primary">Select</b-button>
+      </b-card>
     </div>
     <div v-else-if="patient === this.$route.params.username">
       <h1>
@@ -64,6 +76,9 @@ export default {
     },
     appointment () {
       this.$router.replace({ path: `/appointmentdate/${this.$route.params.username}` })
+    },
+    schedule () {
+      this.$router.replace({ path: `/schedule/${this.$route.params.username}` })
     }
   },
   data () {

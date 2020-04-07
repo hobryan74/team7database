@@ -9,6 +9,7 @@ import appointmentdate from '../views/appointmentdate.vue'
 import appointmentlocation from '../views/appointmentlocation.vue'
 import appointmentselectdoctor from '../views/appointmentselectdoctor.vue'
 import appointmentcomplete from '../views/appointmentcomplete.vue'
+import schedule from '../views/schedule.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/appointmentcomplete/:username',
     name: 'appointmentcomplete',
     component: appointmentcomplete
+  },
+  {
+    path: '/schedule/:username',
+    name: 'schedule',
+    component: schedule
   }
 ]
 
