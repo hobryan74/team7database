@@ -1,2 +1,2 @@
 # team7database
-The user authentication is in the home.vue for login and signup.vue for signup
+The files that are of interest are the .vue files, main.js, and the index.js in the router directory. You will need to download vue along with the vue bootstrap in order to run the program.
