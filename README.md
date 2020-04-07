@@ -1,2 +1,2 @@
 # team7database
-The user authentication is in the home.vue for login and signup.vue for signup
+The main files being used for frontend is all the .vue files, main.js, and index.js in router directory. Vue.js and vue bootstrap will need to be installed to run the application. To compile the application, use the commands "yarn serve".
