@@ -17,8 +17,7 @@
 
     <b-container class="bv-example-row">
       <b-row>
-        <b-col>Location 1</b-col>
-        <b-col>Hours 1</b-col>
+        <b-table striped hover :items="items"></b-table>
       </b-row>
     </b-container>
   </div>
@@ -33,7 +32,12 @@ export default {
   },
   data () {
     return {
-
+      items: [
+        { Location: 'Location 1', Hours: 'Hours 1' },
+        { Location: 'Location 2', Hours: 'Hours 2' },
+        { Location: 'Location 3', Hours: 'Hours 3' },
+        { Location: 'Location 4', Hours: 'Hours 4' }
+      ]
     }
   }
 }

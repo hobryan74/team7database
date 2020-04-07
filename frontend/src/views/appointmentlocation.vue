@@ -7,7 +7,7 @@
         </b-col>
         <b-col>
           <h1>
-            Choose a Location
+            Schedule Appointment
          </h1>
         </b-col>
         <b-col>
@@ -18,6 +18,7 @@
       <b-row align-h="center">
         <b-col cols="5">
            <div>
+             <p>Choose a Location</p>
             <b-form-select v-model="selected" :options="options"></b-form-select>
             <b-button @click="select" :disabled="selected === null" href="#" variant="primary">Select</b-button>
           </div>

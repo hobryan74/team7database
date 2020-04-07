@@ -7,7 +7,7 @@
         </b-col>
         <b-col>
           <h1>
-            Choose a Doctor
+            Schedule Appointment
          </h1>
         </b-col>
         <b-col>
@@ -18,6 +18,7 @@
       <b-row align-h="center">
         <b-col cols="5">
            <div>
+             <p>Choose a Doctor</p>
              <b-form @submit="onSubmit" @reset="onReset" v-if="show">
               <b-form-select
                 id="input-3"
