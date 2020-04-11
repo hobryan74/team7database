@@ -61,7 +61,7 @@
             <!--want to remove this-->
             <b-form-group id="input-group-11" label="Password:" label-for="input-11">
               <b-form-input
-                id="input-1"
+                id="input-11"
                 v-model="signup.password"
                 required
                 placeholder="Enter password"
