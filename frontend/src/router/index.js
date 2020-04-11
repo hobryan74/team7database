@@ -10,7 +10,10 @@ import appointmentlocation from '../views/appointmentlocation.vue'
 import appointmentselectdoctor from '../views/appointmentselectdoctor.vue'
 import appointmentcomplete from '../views/appointmentcomplete.vue'
 import schedule from '../views/schedule.vue'
-
+import history from '../views/history.vue'
+import summary from '../views/summary.vue'
+import prescription from '../views/prescription.vue'
+import referral from '../views/referral.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -63,6 +66,26 @@ const routes = [
     path: '/schedule/:username',
     name: 'schedule',
     component: schedule
+  },
+  {
+    path: '/history/:username',
+    name: 'history',
+    component: history
+  },
+  {
+    path: '/summary/:username',
+    name: 'summary',
+    component: summary
+  },
+  {
+    path: '/prescription/:username',
+    name: 'prescription',
+    component: prescription
+  },
+  {
+    path: '/referral/:username',
+    name: 'referral',
+    component: referral
   }
 ]
 
