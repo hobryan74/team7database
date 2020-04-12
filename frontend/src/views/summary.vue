@@ -27,6 +27,40 @@
                 :options="options"
                 required
               ></b-form-select>
+               <b-form-group id="input-group-5" label="Blood Pressure:" label-for="input-5">
+              <b-form-input
+                id="input-5"
+                v-model="pressure"
+                required
+                placeholder="Enter Blood Pressure"
+              ></b-form-input>
+            </b-form-group>
+
+            <b-form-group id="input-group-6" label="Weight:" label-for="input-6">
+              <b-form-input
+                id="input-6"
+                v-model="weight"
+                required
+                placeholder="Enter weight"
+              ></b-form-input>
+            </b-form-group>
+
+            <b-form-group id="input-group-11" label="Temperature:" label-for="input-11">
+              <b-form-input
+                id="input-1"
+                v-model="temperature"
+                required
+                placeholder="Enter temperature"
+              ></b-form-input>
+            </b-form-group>
+            <b-form-group id="input-group-12" label="Diagnosis:" label-for="input-11">
+              <b-form-input
+                id="input-12"
+                v-model="diagnosis"
+                required
+                placeholder="Enter Diagnosis"
+              ></b-form-input>
+            </b-form-group>
               <b-form-textarea
                 id="textarea"
                 v-model="notes"
@@ -55,8 +89,12 @@ export default {
       //  update database
     },
     onReset (evt) {
-      this.note = ''
+      this.notes = ''
       this.patient = ''
+      this.weight = ''
+      this.pressure = ''
+      this.diagnosis = ''
+      this.temperature = ''
       this.show = false
       this.$nextTick(() => {
         this.show = true
@@ -79,7 +117,11 @@ export default {
         '2'
       ],
       patient: '',
-      note: ''
+      notes: '',
+      weight: '',
+      temperature: '',
+      pressure: '',
+      diagnosis: ''
     }
   }
 }

@@ -33,8 +33,41 @@
       </b-container>
     </div>
     <div v-else-if="employee === this.$route.params.username">
-     <p>Previous Patients</p>
-        <b-table striped hover :items="employee_items"></b-table>
+      <b-container>
+        <b-row align-h="center">
+          <b-col>
+            <p>Previous Patients</p>
+                <b-table striped hover :items="employee_items"></b-table>
+                <p>Choose Patient</p>
+                    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+                      <b-form-select
+                        id="input-3"
+                        v-model="patient_chosen"
+                        :options="options"
+                        required
+                      ></b-form-select>
+                      <b-form-group id="input-group-9" label="Refer to:" label-for="input-9">
+                      <b-form-select
+                        id="input-3"
+                        v-model="doctor"
+                        :options="type"
+                        required
+                      ></b-form-select>
+                    </b-form-group>
+                      <b-form-textarea
+                        id="textarea"
+                        v-model="notes"
+                        placeholder="Notes:"
+                        rows="3"
+                        max-rows="6"
+                        required
+                      ></b-form-textarea>
+                      <b-button type="submit" variant="primary">Submit</b-button>
+                      <b-button type="reset" variant="danger">Reset</b-button>
+                    </b-form>
+              </b-col>
+            </b-row>
+          </b-container>
     </div>
   </div>
 </template>
@@ -54,6 +87,9 @@ export default {
       evt.preventDefault()
       this.from = ''
       this.to = ''
+      this.notes = ''
+      this.doctor = ''
+      this.patient_chosen = ''
       this.bool = false
       this.show = false
       this.$nextTick(() => {
@@ -80,7 +116,15 @@ export default {
       from: '',
       to: '',
       show: true,
-      bool: false
+      bool: false,
+      type: [{ text: 'Select One', value: null }, 'Doctor1', 'Doctor2', 'Doctor3'],
+      doctor: '',
+      patient_chosen: '',
+      options: [
+        { value: null, text: 'Please select an option' },
+        '1',
+        '2'
+      ]
     }
   }
 }
