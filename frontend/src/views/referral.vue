@@ -16,8 +16,19 @@
     </b-container>
     <div v-if="patient === this.$route.params.username">
       <b-container class="bv-example-row">
-        <b-row>
-          <b-table striped hover :items="patient_items"></b-table>
+        <p>Generate Report</p>
+        <b-row align-h="center">
+          <b-col cols="5">
+              <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+                <label for="example-datepicker">From</label>
+                <b-form-datepicker id="from" v-model="from" class="mb-2"></b-form-datepicker>
+                <label for="example-datepicker">To</label>
+                <b-form-datepicker id="to" v-model="to" class="mb-2"></b-form-datepicker>
+                <b-button type="submit" :disabled="from && to === ''" variant="primary">Select</b-button>
+                <b-button type="reset" variant="danger">Reset</b-button>
+              </b-form>
+          </b-col>
+          <b-table v-if="bool === true" striped hover :items="patient_items"></b-table>
         </b-row>
       </b-container>
     </div>
@@ -33,6 +44,21 @@ export default {
   methods: {
     homeclick () {
       this.$router.replace({ path: `/home/${this.$route.params.username}` })
+    },
+    onSubmit (evt) {
+      evt.preventDefault()
+      this.bool = true
+      //  refresh page with data
+    },
+    onReset (evt) {
+      evt.preventDefault()
+      this.from = ''
+      this.to = ''
+      this.bool = false
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
     }
   },
   data () {
@@ -50,7 +76,11 @@ export default {
         { id: 4, patient_ID: '1234', Patient_Name: 'Craig', Date: '2/1/19', time: '3:23 ', Symptoms: 'headache', Diagnosis: 'Polio', Notes: 'ASFEWFWEFASFWEFSDFWEFWEFWEFWEFWEFWEFR' }
       ],
       employee: 'employee',
-      patient: 'patient'
+      patient: 'patient',
+      from: '',
+      to: '',
+      show: true,
+      bool: false
     }
   }
 }
