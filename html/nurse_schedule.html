@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Nurse Summary / Note</title>
+        <title>Nurse Schedule</title>
          <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -29,62 +29,29 @@
 
           <div class="container">
             <div class="row">
-              <h1>Summary: Previous Appointments</h1><br>
+              <h1>Schedule: Upcoming Appointments</h1><br>
+              <table style="width:100%">
+                <tr>
+                  <th>Appointment ID</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Patient</th>
+                  <th>Location</th>
+                  <th>Reason</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>03/03/20</td>
+                  <td>8:30 AM</td>
+                  <td>Patient 1</td>
+                  <td>Location 1</td>
+                  <td>Something really long to test if it fits.</td>
+                </tr>
+                
+              </table><br><br><br>
             </div>
           </div>
-          <table style="width:100%">
-            <tr>
-              <th>Appointment ID</th>
-              <th>Location</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Patient</th>
-              <th>Blood Pressure</th>
-              <th>Weight</th>
-              <th>Temperature</th>
-              <th>Reason for visit</th>
-              <th>Doctor's Notes</th>
-            </tr>
-            <tr>
-              <td>Location 1</td>
-              <td>69939 somewhere</td>
-              <td>03/02/20</td>
-              <td>8:30 AM</td>
-              <td>Doctor 1</td>
-              <td>123</td>
-              <td>140</td>
-              <td>97</td>
-              <td>Fever</td>
-              <td>Rest</td>
-            </tr>
-            
-          </table><br><br><br>
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form action="/summaryupdate">
-                            <h1>Update Patient Record</h1>
-                            <label for="choosepatientID">Choose Patient ID:</label><br>
-                            <input type="text" id="choosepatientID" name="choosepatientID" placeholder="Enter Patient ID" required><br>
-              
-                            <label for="bloodpressure">Blood Pressure:</label><br>
-                            <input type="text" id="bloodpressure" name="bloodpressure" value={{bloodpressure}} required><br>
-              
-                            <label for="weight">Weight:</label><br>
-                            <input type="text" id="weight" name="weight" value={{weight}} required><br>
-                            
-                            <label for="changephone">Temperature:</label><br>
-                            <input type="text" id="changephone" name="changephone" value={{temperature}} required><br>
-                            
-                            <textarea name="notes" rows="3" cols="30" placeholder="Notes" required></textarea><br>
-                            <br>
-              
-                            <input type="submit" value="Submit">
-                        </form>
-                    </div>
-                </div>
-            </div>
+          
 
     </body>
 
